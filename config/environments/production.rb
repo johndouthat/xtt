@@ -20,8 +20,8 @@ config.action_mailer.raise_delivery_errors = true
 config.action_mailer.delivery_method = :sendmail
 
 config.after_initialize do
-  ExceptionNotifier.sender_address = %("Application Error" <tt.error@entp.com>)
-  ExceptionNotifier.exception_recipients = [ TT_EMAIL ]
+  ExceptionNotifier.sender_address = %Q("Application Error" <#{Xtt.config['excetion_notification_email']}>)
+  ExceptionNotifier.exception_recipients = [ Xtt.config['email'] ]
   # defaults to "[ERROR] "
   ExceptionNotifier.email_prefix = "[xTT] "
 end

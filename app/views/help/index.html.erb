@@ -32,9 +32,9 @@
       
       <li>
         <h3>3. Become a power user</h3>
-        <p>Add your AIM username to your profile, and add <b>xttbot</b> to your AIM buddies (ichat, adium).</p>
-        <p>Ask xttbot for <b>help</b>, for your list of <b>projects</b>, available <b>commands</b>, or your
-        current <b>status</b>.  xttbot can also take your status updates.
+        <p>Add your AIM username to your profile, and add <b><%= Xtt.config['aim_username'] %></b> to your AIM buddies (ichat, adium).</p>
+        <p>Ask <%= Xtt.config['aim_username'] %> for <b>help</b>, for your list of <b>projects</b>, available <b>commands</b>, or your
+        current <b>status</b>.  <%= Xtt.config['aim_username'] %> can also take your status updates.
         </p>
       </li>
       
@@ -51,7 +51,7 @@
         <p>We're working hard on integrating external sources of data; so, for example, reading RSS feeds of
           your SCM commit history; or to watch your AIM away status to automatically sign you out.
         </p>
-        <p>Found a bug?  email <code>courtenay+xtt</code>@entp.com
+        <p>Found a bug?  email <code><%= Xtt.config['email'] %></code>
       </li>
   </ul>
 

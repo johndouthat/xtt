@@ -6,3 +6,4 @@ db/*.sqlite3*
 vendor/rails
 .DS_Store
 tmp
+config/xtt.yml

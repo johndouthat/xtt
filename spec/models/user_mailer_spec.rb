@@ -10,7 +10,7 @@ describe User::Mailer do
     @expected = TMail::Mail.new
     @expected.set_content_type 'text', 'plain', { 'charset' => CHARSET }
     @expected.mime_version = '1.0'
-    @expected.from         = TT_EMAIL.to_s
+    @expected.from         = Xtt.config['email'].to_s
     @expected.to           = @user.email
   end
   
@@ -46,7 +46,7 @@ describe User::Mailer do
   
   def read_fixture(action)
     returning IO.readlines("#{File.dirname(__FILE__)}/../fixtures/mailers/user_mailer/#{action}").join do |data|
-      data.gsub! /:host/, TT_HOST
+      data.gsub! /:host/, Xtt.config['host']
     end
   end
 end

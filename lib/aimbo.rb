@@ -78,17 +78,12 @@ end
 
 class Aimbo
   
-  @@credentials = {
-    :username => 'USERNAME',
-    :password => 'PASSWORD',
-    :admin    => 'courtenay187'
-  }
-  
   attr_accessor :client, :xtt
   include IM
   
-  def initialize
-    @xtt ||= XttBot.new(@@credentials[:username], @@credentials[:password])
+  def initialize(config)
+    @config = config
+    @xtt ||= XttBot.new(@config[:username], @config[:password])
     @client = @xtt.client
     @error_notifier ||= setup_error_notification
     @im_notifier ||= setup_im
@@ -104,7 +99,7 @@ class Aimbo
   
   def setup_im
     @client.on_im do |message, buddy|
-      if message =~ /reload/ and buddy.screen_name == @@credentials[:admin]
+      if message =~ /reload/ and buddy.screen_name == @config[:admin]
         puts "Reloading IM::Response"
         #if defined?(IM)
         #  self.class.send :remove_const, :IM
@@ -139,10 +134,6 @@ class Aimbo
   end
 
 end
-
-aimbo = Aimbo.new
-aimbo.xtt.xtt_loop
-return
 
 #/var/www/xtt/releases/20080208021931/vendor/rails/railties/lib/commands/runner.rb:47: 
 #/usr/lib64/ruby/gems/1.8/gems/net-toc-0.2/./net/toc.rb:218:in `recv': Connection reset by peer - recvfrom(2) (Errno::ECONNRESET)
