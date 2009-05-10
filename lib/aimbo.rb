@@ -91,10 +91,12 @@ class Aimbo
   end
   
   def setup_error_notification
-    #@client.on_error do |error|
-    #  admin = @client.buddy_list.buddy_named(@@credentials[:admin])
-    #  admin.send_im("Error: #{error}")
-    #end
+    if @config[:send_errors]
+      @client.on_error do |error|
+        admin = @client.buddy_list.buddy_named(@config[:admin])
+        admin.send_im("Error: #{error}")
+      end
+    end
   end
   
   def setup_im

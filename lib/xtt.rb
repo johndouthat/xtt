@@ -9,7 +9,8 @@ class Xtt
     aimbo = Aimbo.new(
       :username => config['aim_username'],
       :password => config['aim_password'],
-      :admin => config['aim_admin']
+      :admin => config['aim_admin'],
+      :send_errors => config['aim_send_errors']
     )
     aimbo.xtt.xtt_loop
   end

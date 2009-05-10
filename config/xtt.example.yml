@@ -3,5 +3,6 @@ email: courtenay+tt@entp.com
 aim_username: xttbot
 aim_password: PASSWORD
 aim_admin: courtenay187
+aim_send_errors: true
 secret: SEKRIT
 excetion_notification_email: tt.error@entp.com
