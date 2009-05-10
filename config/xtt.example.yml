@@ -6,3 +6,4 @@ aim_admin: courtenay187
 aim_send_errors: true
 secret: SEKRIT
 excetion_notification_email: tt.error@entp.com
+google_analytics_site_id: UA-3465274-3
