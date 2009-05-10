@@ -11,11 +11,11 @@ Getting Started
 2. Create config/xtt.yml. Refer to config/xtt.example.yml
 3. Create the log directory and make it world-writable
 4. Run `rake gems:install` to ensure you have all the required gems, such as Tinder
-4. Create the database with `rake db:create`
-5. Populate the database with `rake db:schema:load`, then `rake db:migrate`
-6. Start the server with ./script/server
-7. Add a user at http://<your host>/signup
-5. If you don't get a confirmation email (which you likely won't if you don't have the mail sending configured), check log/development.log for a copy of the confirmation email that would have been sent to you. copy and paste the activation url from it into the browser toolbar (should look like the following: http://tt.entp.com/activate/db61f839776898cedee72fcb9f87465d797e2e93 - of course, replace tt.entp.com with your dev server address.)
+5. Create the database with `rake db:create`
+6. Populate the database with `rake db:schema:load`, then `rake db:migrate`
+7. Start the server with ./script/server
+8. Add a user at http://<your host>/signup
+9. If you don't get a confirmation email (which you likely won't if you don't have the mail sending configured), check log/development.log for a copy of the confirmation email that would have been sent to you. copy and paste the activation url from it into the browser toolbar (should look like the following: http://tt.entp.com/activate/db61f839776898cedee72fcb9f87465d797e2e93 - of course, replace tt.entp.com with your dev server address.)
 
 Going into Production
 ===============
